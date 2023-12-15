@@ -1,0 +1,89 @@
+.home_page {
+  margin: 0;
+  background-color: #282c34;
+}
+ul {
+  padding-left: 18px;
+}
+ul.posts {
+  padding-left: 0px;
+	margin-top: 0;
+}
+ul.posts li {
+  list-style-type: none;
+  clear: both;
+}
+
+ul.posts span.count {
+ width: 8ex;
+ text-align: right
+}
+
+ul.posts span.dirlist {
+  font-family: Monaco, "Courier New", monospace;
+  font-size: 100%;
+  float: left;
+  display: block;
+  color: #444;
+}
+
+h2 {
+  color: #111;
+  font-size: 146.5%;
+  margin-top: 36px;
+}
+h3 {
+  color: #222;
+  margin-top: 28px;
+}
+a       { color: dodgerblue; text-decoration: none; }
+a:hover { color: deepskyblue; }
+p.date {
+  color: #999;
+  font-style: italic;
+}
+dd {
+	margin-bottom: 8px;
+}
+#logo_container {
+  text-align:center;
+  margin-top: 50px;
+  margin-bottom: 20px;
+}
+#navbar {
+  margin: 0;
+  padding-left: 0;
+  white-space: nowrap;
+}
+#navbar li {
+  display: inline;
+  list-style-type: none;
+}
+#navbar a {
+  display: block;
+  float: left;
+  width: 130px;
+  height: 16px;
+  padding-bottom: 20px;
+  padding-top: 20px;
+  text-align: center;
+  padding-left: 2px;
+  border-left:  1px solid #4B5261;
+  border-right: 1px solid #4B5261;
+  text-decoration: none;
+  background-color: #252630;
+  margin: 0;
+}
+#navbar a:link,
+#navbar a:visited { color: #DBE7FF; }
+#navbar a:hover   { background-color: webgray; }
+
+img.left {
+	float: left;
+	margin-right: 8px;
+}
+img.right {
+	float: right;
+	margin-left: 6px;
+}
+
