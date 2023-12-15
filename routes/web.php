@@ -12,7 +12,6 @@ use Illuminate\Support\Facades\Route;
 | be assigned to the "web" middleware group. Make something great!
 |
 */
-Nova::routes();
 
 Route::group(['namespace' => 'App\Http\Controllers'], function () {
     Route::get('/', 'ArticleController@list')->name('article.list');
