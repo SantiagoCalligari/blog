@@ -1,22 +1,16 @@
 @extends('home.index')
 @section('title', 'ls /etc [Santiago Calligari]')
-@section('content')
-    <ul id="navbar">
-        <li><a href="/">/</a></li>
-        <li><a href="/articles.html">/articles</a></li>
-        <li><a href="/code.html">/code</a></li>
-    </ul>
-    <br style="clear:both">
+@section('body')
     <div id="logo_container">
         <img src="{{ asset('assets/img/crab.png') }}"></img>
     </div>
-    <div style="margin-left:80px"> <!-- div-outer -->
+    <div style="margin-left:80px">
 
         <ul class="posts">
             <li>
                 <span class="dirlist" style="color: violet">❯
                     <span style="color: #b5bd68">ls</span>
-                    <span style="color: #b294bb">/etc</span> |
+                    <span style="color: #b294bb">/etc</span><span style="color: gray"> |</span>
                     <span style="color: #b5bd68">more</span>
                 </span>
             </li>

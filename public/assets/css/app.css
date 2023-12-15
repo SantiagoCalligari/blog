@@ -71,12 +71,12 @@ dd {
   border-left:  1px solid #4B5261;
   border-right: 1px solid #4B5261;
   text-decoration: none;
-  background-color: #252630;
+  background-color: #1e1f27;
   margin: 0;
 }
 #navbar a:link,
 #navbar a:visited { color: #DBE7FF; }
-#navbar a:hover   { background-color: webgray; }
+#navbar a:hover   { background-color: #2c2d37; color: #DBE7FF; }
 
 img.left {
 	float: left;
