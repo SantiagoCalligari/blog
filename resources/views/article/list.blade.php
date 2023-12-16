@@ -6,6 +6,8 @@
     </div>
     <div style="margin-left:80px">
 
+        <script src="https://unpkg.com/feather-icons"></script>
+
         <ul class="posts">
             <li>
                 <span class="dirlist" style="color: violet">❯
@@ -23,10 +25,16 @@
                     <span class="dirlist" style="color:mediumspringgreen">
                         {{ date('M d Y', strtotime($article->created_at)) }}
                         <a href="{{ route('article.view', $article->id) }}">{{ $article->name }}</a>
+                        <a href="{{ route('article.destroy', $article->id) }}" style="color:red; ">
+                            <i data-feather="trash" style="height:10px; width:10px"></i>
+                        </a>
                     </span>
                 </li>
             @endforeach
 
+            <script>
+                feather.replace();
+            </script>
         </ul>
 
     </div>

@@ -22,6 +22,7 @@ Route::group(['namespace' => 'App\Http\Controllers'], function () {
     Route::group(['middleware' => ['auth']], function () {
         Route::post('/store', 'ArticleController@store')->name('article.store');
         Route::get('/store', 'ArticleController@form')->name('article.store');
+        Route::get('/destroy/{id}', 'ArticleController@destroy')->name('article.destroy');
         Route::get('/logout', 'UserController@logout')->name('logout');
     });
 

@@ -24,6 +24,15 @@ class ArticleController extends Controller {
         return view('article.store');
     }
 
+    public function destroy($id) {
+        $article = $this->model->query()->find($id);
+        Storage::disk('markdown')->delete($article->path);
+        $article->delete();
+
+        return redirect('/');
+
+    }
+
     public function store(ArticleRequest $request) {
         $markdownContent = file_get_contents($request->file('file')->path());
         $markdownTitle = $request->file('file')->getClientOriginalName();
@@ -41,8 +50,9 @@ class ArticleController extends Controller {
     public function view($id) {
         $article = $this->model->query()->find($id);
         $markdown_content = Storage::disk('markdown')->get($article->path);
+        $title = $article->name;
 
-        return view('article.view', compact('markdown_content'));
+        return view('article.view', compact('markdown_content', 'title'));
 
     }
 }

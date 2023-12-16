@@ -1,0 +1,9 @@
+
+.markdown_container > * {
+    color: #aaa !important;
+    background-color: #282c34 !important;
+    }
+.markdown_container{
+    padding-left: 30%;
+    padding-right: 30%;
+}

@@ -1,3 +1,11 @@
+@font-face{
+    font-family: 'Writer-Regular';
+    font-style: normal;
+    src: url('/assets/fonts/ttf/Writer-Regular.ttf');
+}
+* {
+    font-family: 'Writer-Regular';
+}
 .home_page {
   margin: 0;
   background-color: #282c34;
