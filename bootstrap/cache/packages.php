@@ -52,4 +52,11 @@
       'Flare' => 'Spatie\\LaravelIgnition\\Facades\\Flare',
     ),
   ),
+  'spatie/laravel-markdown' => 
+  array (
+    'providers' => 
+    array (
+      0 => 'Spatie\\LaravelMarkdown\\MarkdownServiceProvider',
+    ),
+  ),
 );

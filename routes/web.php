@@ -21,11 +21,11 @@ Route::group(['namespace' => 'App\Http\Controllers'], function () {
 
     Route::group(['middleware' => ['auth']], function () {
         Route::post('/store', 'ArticleController@store')->name('article.store');
+        Route::get('/store', 'ArticleController@form')->name('article.store');
         Route::get('/logout', 'UserController@logout')->name('logout');
     });
 
     Route::get('/', 'ArticleController@list')->name('article.list');
     Route::get('/{id}', 'ArticleController@view')->name('article.view');
-    Route::get('/store', 'ArticleController@form')->name('article.store');
     Route::get('/{id}', 'ArticleController@view')->name('article.view');
 });

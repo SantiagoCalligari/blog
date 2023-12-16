@@ -10,7 +10,6 @@
         @if (Auth::User())
             <li><a href="{{ route('article.store') }}">./create</a></li>
             <li><a href="{{ route('logout') }}">./logout</a></li>
-            hola {{ Auth::User()->name }}
         @endif
 
     </ul>

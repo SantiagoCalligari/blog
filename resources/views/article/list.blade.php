@@ -30,4 +30,5 @@
         </ul>
 
     </div>
+    <a href="{{ route('login') }}" class="login">Login</a>
 @endsection

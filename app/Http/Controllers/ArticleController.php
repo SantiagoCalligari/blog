@@ -20,6 +20,7 @@ class ArticleController extends Controller {
     }
 
     public function form() {
+
         return view('article.store');
     }
 
@@ -38,6 +39,10 @@ class ArticleController extends Controller {
     }
 
     public function view($id) {
+        $article = $this->model->query()->find($id);
+        $markdown_content = Storage::disk('markdown')->get($article->path);
+
+        return view('article.view', compact('markdown_content'));
 
     }
 }
