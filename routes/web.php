@@ -14,6 +14,17 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::group(['namespace' => 'App\Http\Controllers'], function () {
-    Route::get('/', 'ArticleController@list')->name('article.list');
-    Route::get('/store', 'ArticleController@store')->name('article.store');
+    Route::group(['middleware' => ['guest']], function () {
+        Route::prefix('login')->group(function () {
+            Route::get('/', 'UserController@form')->name('login');
+            Route::post('/', 'USerController@login')->name('login');
+        });
+    });
+    Route::group(['middleware' => ['auth']], function () {
+        Route::get('/', 'ArticleController@list')->name('article.list');
+        Route::get('/store', 'ArticleController@form')->name('article.store');
+        Route::post('/store', 'ArticleController@store')->name('article.store');
+        Route::get('/{id}', 'ArticleController@view')->name('article.view');
+
+    });
 });

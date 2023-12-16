@@ -15,15 +15,17 @@
                 </span>
             </li>
 
-            <li>
-                <span class="dirlist"><span style="color:salmon">-rwxr-x-r-x </span><span style="color:seagreen">root
-                        root</span></span>
-                <span class="dirlist count" style="color:lemonchiffon">682&nbsp;</span>
-                <span class="dirlist" style="color:mediumspringgreen">
-                    25 Dec 2012
-                    <a href="/articles/dont-mock-me.html">Don't Mock Me</a>
-                </span>
-            </li>
+            @foreach ($articles as $article)
+                <li>
+                    <span class="dirlist"><span style="color:salmon">-rwxr-x-r-x </span><span style="color:seagreen">root
+                            root</span></span>
+                    <span class="dirlist count" style="color:lemonchiffon">{{ $article->size }}&nbsp;</span>
+                    <span class="dirlist" style="color:mediumspringgreen">
+                        {{ date('M d Y', strtotime($article->created_at)) }}
+                        <a href="{{ route('article.view', $article->id) }}">{{ $article->name }}</a>
+                    </span>
+                </li>
+            @endforeach
 
         </ul>
 

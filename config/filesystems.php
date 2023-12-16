@@ -43,6 +43,10 @@ return [
             'visibility' => 'public',
             'throw' => false,
         ],
+        'markdown' => [
+            'driver' => 'local',
+            'root' => base_path('resources/views/markdown'),
+        ],
 
         's3' => [
             'driver' => 's3',

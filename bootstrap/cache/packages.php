@@ -1,11 +1,4 @@
 <?php return array (
-  'dinandmentink/nova-markdown' => 
-  array (
-    'providers' => 
-    array (
-      0 => 'DinandMentink\\Markdown\\FieldServiceProvider',
-    ),
-  ),
   'laravel/sail' => 
   array (
     'providers' => 
