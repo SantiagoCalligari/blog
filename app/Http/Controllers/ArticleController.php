@@ -36,4 +36,8 @@ class ArticleController extends Controller {
 
         return redirect()->route('article.list');
     }
+
+    public function view($id) {
+
+    }
 }
