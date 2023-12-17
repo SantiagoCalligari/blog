@@ -12,8 +12,8 @@ class UserController extends Controller {
         $credentials = $request->getCredentials();
 
         if (!Auth::attempt($credentials)) {
-            return redirect()->route('user.index')
-                ->withErrors(trans('auth.failed'));
+            return redirect()->route('article.list')
+                ->withErrors(trans('article.list'));
         }
         $user = Auth::user();
         Auth::login($user);
