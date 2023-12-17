@@ -1,10 +1,17 @@
+.card{
+    background-color: #1e2125 !important;
+    color: #fff;
+    border-radius: 0;
+    border: 0;
+}
 @font-face{
     font-family: 'Writer-Regular';
     font-style: normal;
     src: url('/assets/fonts/ttf/Writer-Regular.ttf');
 }
 * {
-    font-family: 'Writer-Regular';
+    font-family: 'Courier';
+    font-size: 105%;
 }
 .home_page {
   margin: 0;
@@ -27,12 +34,16 @@ ul.posts span.count {
  text-align: right
 }
 
+
 ul.posts span.dirlist {
-  font-family: Monaco, "Courier New", monospace;
-  font-size: 100%;
+  font-family: "Writer-Regular";
+  font-size: 90%;
   float: left;
   display: block;
   color: #444;
+}
+.nav-item:hover {
+    background-color: #1e2125;
 }
 
 h2 {
@@ -57,15 +68,6 @@ dd {
   text-align:center;
   margin-top: 50px;
   margin-bottom: 20px;
-}
-#navbar {
-  margin: 0;
-  padding-left: 0;
-  white-space: nowrap;
-}
-#navbar li {
-  display: inline;
-  list-style-type: none;
 }
 .login{
     position: absolute;
