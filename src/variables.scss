@@ -1,0 +1,16 @@
+    $light:      #ABB2BF;
+    $dark:       #282c34;
+    $primary:    #61afef;
+    $secondary:  #c678DD;
+    $info:       #56b6c2;
+    $success:    #98c379;
+    $warning:    #e5c07B;
+    $danger:     #e06c75;
+
+
+@import "bootstrap/scss/functions"; /* Override Bootstrap's variables here */
+@import "bootstrap/scss/variables";
+@import "bootstrap/scss/variables-dark";
+@import "bootstrap/scss/maps";
+@import "bootstrap/scss/mixins";
+@import "bootstrap/scss/utilities";
