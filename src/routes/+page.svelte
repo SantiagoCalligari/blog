@@ -1,7 +1,7 @@
 <script lang="ts">
-  import Terminal from "../components/Terminal.svelte";
+  import ArticleTerminal from "../components/Article/ArticleTerminal.svelte";
 </script>
 
 <div class="d-flex">
-  <Terminal />
+  <ArticleTerminal />
 </div>

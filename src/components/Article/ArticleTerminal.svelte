@@ -1,6 +1,6 @@
 <script lang="ts">
   import Article from "./Article.svelte";
-  import Closetags from "./Closetags.svelte";
+  import Closetags from "../Closetags.svelte";
   //im gonna write a list of articles here
   let articles = [
     {
