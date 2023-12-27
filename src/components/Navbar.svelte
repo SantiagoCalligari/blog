@@ -1,6 +1,6 @@
 <script lang="ts">
   import { page } from "$app/stores";
-  let links = ["/", "/code", "/articles", "./create", "./logout"];
+  let links = ["/", "/code", "/articles", "./create", "./logout", "./login"];
   let selected = $page.url.pathname;
 </script>
 
