@@ -1,6 +1,6 @@
 <script lang="ts">
   import { page } from "$app/stores";
-  let links = ["/", "/code", "/articles", "./create", "./logout", "./login"];
+  let links = ["/", "/code", "/articles"];
   let selected = $page.url.pathname;
 </script>
 
@@ -20,6 +20,16 @@
             </a>
           </li>
         {/each}
+        <li class="nav-item px-5">
+          <a
+            class="nav-link {selected === './create' ? 'active' : ''}"
+            aria-current="page"
+            href={"./create"}
+            on:click={() => (selected = "./create")}
+          >
+            ./create
+          </a>
+        </li>
       </ul>
     </div>
   </div>

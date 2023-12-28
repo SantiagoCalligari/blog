@@ -1,11 +1,14 @@
-<form method="POST" action="?/login">
-  <label>
-    Email
-    <input name="email" type="email" value="santiago@calligari.ar" />
-  </label>
-  <label>
-    Password
-    <input name="password" type="password" value="muriel2003" />
-  </label>
-  <button>Log in</button>
+<script lang="ts">
+  import { enhance } from "$app/forms";
+</script>
+
+<h1>Sign in</h1>
+<form method="post" use:enhance>
+  <label for="username">Username</label>
+  <input name="username" id="username" />
+  <br />
+  <label for="password">Password</label>
+  <input type="password" name="password" id="password" />
+  <br />
+  <input type="submit" />
 </form>

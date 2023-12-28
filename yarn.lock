@@ -157,6 +157,18 @@
     "@jridgewell/resolve-uri" "^3.1.0"
     "@jridgewell/sourcemap-codec" "^1.4.14"
 
+"@lucia-auth/adapter-prisma@^3.0.2":
+  version "3.0.2"
+  resolved "https://registry.yarnpkg.com/@lucia-auth/adapter-prisma/-/adapter-prisma-3.0.2.tgz#712bfca8c4e74575c0aa53a96f1fed738afada09"
+  integrity sha512-EyJWZene1/zasPwPctv8wwNErZt5mwwm5JATbhg+kXr3R8pbC7lJfVzDTAeeFClVH5k/FywRcsBl3JkPaNIcow==
+
+"@lucia-auth/sveltekit@^0.6.11":
+  version "0.6.11"
+  resolved "https://registry.yarnpkg.com/@lucia-auth/sveltekit/-/sveltekit-0.6.11.tgz#04f6ef047855aa7b9ebe2d88d56b805c31aa191d"
+  integrity sha512-VRYOVnxyL0Iemgp7PZZ/f9nbzS7+gEwl3k/5p03wOIFWdD2BY5CiBjVqMvHXLf6ZxqZzPzYebHCL6WSFvfdxmA==
+  dependencies:
+    "@noble/hashes" "^1.1.3"
+
 "@mapbox/node-pre-gyp@^1.0.11":
   version "1.0.11"
   resolved "https://registry.yarnpkg.com/@mapbox/node-pre-gyp/-/node-pre-gyp-1.0.11.tgz#417db42b7f5323d79e93b34a6d7a2a12c0df43fa"
@@ -171,6 +183,11 @@
     rimraf "^3.0.2"
     semver "^7.3.5"
     tar "^6.1.11"
+
+"@noble/hashes@^1.1.3":
+  version "1.3.3"
+  resolved "https://registry.yarnpkg.com/@noble/hashes/-/hashes-1.3.3.tgz#39908da56a4adc270147bb07968bf3b16cfe1699"
+  integrity sha512-V7/fPHgl+jsVPXqqeOzT8egNj2iBIVt+ECeMMG8TdcnTikP3oaBtUVqpT/gYCR68aEBJSF+XbYUxStjbFMqIIA==
 
 "@nodelib/fs.scandir@2.1.5":
   version "2.1.5"
@@ -829,6 +846,16 @@ lru-cache@^6.0.0:
   integrity sha512-Jo6dJ04CmSjuznwJSS3pUeWmd/H0ffTlkXXgwZi+eq1UCmqQwCh+eLsYOYCwY991i2Fah4h1BEMCx4qThGbsiA==
   dependencies:
     yallist "^4.0.0"
+
+lucia-auth@^1.8.0:
+  version "1.8.0"
+  resolved "https://registry.yarnpkg.com/lucia-auth/-/lucia-auth-1.8.0.tgz#075c01d4b4c4eee1622f2b6534100cdde983a5d0"
+  integrity sha512-zI8gT2AOpxTPIxYzToEdgoht+GOflrduZiHPsOEmg4/2pThOyCW3o3lXh+Uwh20tJ9QoXwQe9/Omn6PlUG6efw==
+
+lucia@^2.7.6:
+  version "2.7.6"
+  resolved "https://registry.yarnpkg.com/lucia/-/lucia-2.7.6.tgz#7407b7b3d44021a0f5630df1322c833be90ae1b2"
+  integrity sha512-xyRkNtevf0DUM4nGC6F2nCFFNphZ1qqBrfWwAgPa9zkpQsVJ/hN32I8zAY+pm+ZKWPPS/C/Sqqmo2LreSCzg7w==
 
 magic-string@^0.30.4, magic-string@^0.30.5:
   version "0.30.5"
