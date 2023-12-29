@@ -1,28 +1,54 @@
-<script lang="ts">
-  import { Editor, rootCtx, defaultValueCtx } from "@milkdown/core";
-  import { commonmark } from "@milkdown/preset-commonmark";
-  import { nord } from "@milkdown/theme-nord";
-  import { prism } from "@milkdown/plugin-prism";
+<script>
+  // Import markdown conversion library
+  import { Marked } from "marked";
 
-  const markdown = `# Milkdown Svelte Commonmark
+  // Declare a variable to store the markdown data
+  import { markedHighlight } from "marked-highlight";
+  import hljs from "highlight.js";
 
-> You're scared of a world where you're needed.
-
-This is a demo for using Milkdown with **Svelte**.`;
-
-  function editor(dom) {
-    Editor.make()
-      .config((ctx) => {
-        ctx.set(rootCtx, dom);
-        ctx.set(defaultValueCtx, markdown);
-      })
-      .config(nord)
-      .use(commonmark)
-      .use(prism)
-      .create();
-  }
+  let markdown = "";
+  const marked = new Marked(
+    markedHighlight({
+      langPrefix: "hljs language-",
+      highlight(code, lang, _) {
+        const language = hljs.getLanguage(lang) ? lang : "plaintext";
+        return hljs.highlight(code, { language }).value;
+      },
+    }),
+  );
+  marked.use({ gfm: true });
 </script>
 
-<div class="mx-auto border" style="max-width: 50%; margin: 0 auto;">
-  <div use:editor />
+<link
+  href="
+https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/base16/one-light.min.css
+"
+  rel="stylesheet"
+/>
+<link
+  href="
+https://cdnjs.cloudflare.com/ajax/libs/github-markdown-css/5.5.0/github-markdown-light.css
+"
+  rel="stylesheet"
+/>
+<div class="grid">
+  <div class="row">
+    <div class="col">
+      <div class="form-outline">
+        <textarea
+          class="form-control"
+          id="textAreaExample1"
+          bind:value={markdown}
+          placeholder="Enter markdown here"
+          style="min-height: 500px"
+          rows="4"
+        ></textarea>
+      </div>
+    </div>
+    <div class="col">
+      <div class="preview">
+        {@html marked.parse(markdown)}
+      </div>
+    </div>
+  </div>
 </div>

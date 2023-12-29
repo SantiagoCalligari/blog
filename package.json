@@ -52,9 +52,14 @@
     "@milkdown/plugin-prism": "^7.3.3",
     "@milkdown/preset-commonmark": "^7.3.3",
     "@milkdown/theme-nord": "^7.3.3",
+    "@tailwindcss/typography": "^0.5.10",
     "bootstrap": "^5.3.2",
     "bytemd": "^1.21.0",
-    "svelte-terminal": "candywater/svelte-terminal#main"
+    "highlight.js": "^11.9.0",
+    "marked": "^11.1.0",
+    "marked-highlight": "^2.1.0",
+    "svelte-terminal": "candywater/svelte-terminal#main",
+    "tailwindcss": "^3.4.0"
   },
   "prisma": {
     "seed": "ts-node prisma/seed.js"
