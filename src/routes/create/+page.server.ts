@@ -1,7 +1,8 @@
-import { redirect } from "@sveltejs/kit";
+import { fail, redirect } from "@sveltejs/kit";
 
-import type { PageServerLoad } from "./$types";
+import { PrismaClient } from "@prisma/client";
 
+import type { PageServerLoad, Actions } from "./$types";
 export const load: PageServerLoad = async ({ locals }) => {
   const session = await locals.auth.validate();
   if (!session) throw redirect(302, "/");
@@ -9,5 +10,29 @@ export const load: PageServerLoad = async ({ locals }) => {
     userId: session.user.userId,
     username: session.user.username
   };
+};
+
+export const actions: Actions = {
+  default: async ({ request, locals }) => {
+    const prisma = new PrismaClient();
+    const session = await locals.auth.validate();
+    if (session) {
+      const formData = await request.formData();
+      const title: string = formData.get("title") as string;
+      const body: string = formData.get("body") as string;
+      const published = true;
+      await prisma.post.create({
+        data: {
+          title: title,
+          content: body,
+          published: published,
+          createdAt: new Date(),
+          updatedAt: new Date(),
+        },
+      }
+      );
+
+    }
+  }
 };
 
