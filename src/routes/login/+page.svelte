@@ -2,13 +2,36 @@
   import { enhance } from "$app/forms";
 </script>
 
-<h1>Sign in</h1>
-<form method="post" use:enhance>
-  <label for="username">Username</label>
-  <input name="username" id="username" />
-  <br />
-  <label for="password">Password</label>
-  <input type="password" name="password" id="password" />
-  <br />
-  <input type="submit" />
-</form>
+<div class="card mx-auto" style="max-width: 500px; min-height: 300px;">
+  <div class="card-header text-center">
+    <h3>Sign in</h3>
+  </div>
+  <div class="card-body">
+    <form method="post" use:enhance>
+      <div class="form-floating mb-3">
+        <input
+          type="text"
+          name="username"
+          class="form-control"
+          id="username"
+          placeholder="Username"
+        />
+        <label for="username" class="form-label">Username</label>
+      </div>
+
+      <div class="form-floating mb-3">
+        <input
+          name="password"
+          type="text"
+          class="form-control"
+          id="password"
+          placeholder="Password"
+        />
+        <label for="password" class="form-label">Password</label>
+      </div>
+      <div class="d-grid gap-2">
+        <button type="submit" class="btn btn-danger">Sign in</button>
+      </div>
+    </form>
+  </div>
+</div>
