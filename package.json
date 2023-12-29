@@ -48,6 +48,6 @@
     "svelte-terminal": "candywater/svelte-terminal#main"
   },
   "prisma": {
-    "seed": "ts-node prisma/seed.ts"
+    "seed": "ts-node prisma/seed.js"
   }
 }
