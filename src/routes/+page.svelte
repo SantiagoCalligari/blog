@@ -17,7 +17,7 @@
       name: "Odisea Cibernética",
     },
   ];
-
+  import { enhance } from "$app/forms";
   import type { PageData } from "./$types";
 
   export let data: PageData;
