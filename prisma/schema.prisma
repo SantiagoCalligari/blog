@@ -35,6 +35,7 @@ model Post {
   id        Int      @id @default(autoincrement())
   title     String
   content   String
+  size      Int
   createdAt DateTime @default(now())
   updatedAt DateTime @updatedAt
   published Boolean  @default(false)

@@ -1,30 +1,14 @@
 <script lang="ts">
   import ArticleTerminal from "../components/Article/ArticleTerminal.svelte";
-  let articles = [
-    {
-      size: 600,
-      date: "Dec 24 2023",
-      name: "Epicidad Galáctica",
-    },
-    {
-      size: 500,
-      date: "Dec 24 2023",
-      name: "Risas Subatómicas",
-    },
-    {
-      size: 900,
-      date: "Dec 24 2023",
-      name: "Odisea Cibernética",
-    },
-  ];
   import { enhance } from "$app/forms";
   import type { PageData } from "./$types";
-
   export let data: PageData;
+  let articles = data.props.posts;
+  let user = data.props.user;
 </script>
 
 <div class="d-flex">
-  <ArticleTerminal {articles} />
+  <ArticleTerminal {articles} {user} />
 </div>
 {#if data.username !== null}
   <p>Hello {data.username}</p>

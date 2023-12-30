@@ -25,6 +25,7 @@ export const actions: Actions = {
         data: {
           title: title,
           content: body,
+          size: body.size,
           published: published,
           createdAt: new Date(),
           updatedAt: new Date(),

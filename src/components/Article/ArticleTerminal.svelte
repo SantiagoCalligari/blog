@@ -1,7 +1,19 @@
 <script lang="ts">
   import Article from "./Article.svelte";
   import Closetags from "../Closetags.svelte";
-  export let articles: { size: number; date: string; name: string }[] = [];
+  export let user: any;
+  export let articles: {
+    id: number;
+    title: string;
+    content: string;
+    createdAt: Date;
+    updatedAt: Date;
+    published: boolean;
+  }[] = [];
+  function formatDate(date: any) {
+    const opt = { month: "short", day: "numeric", year: "numeric" };
+    return new Intl.DateTimeFormat("en-US", opt).format(date);
+  }
 </script>
 
 <svelte:head>
@@ -23,7 +35,13 @@
       </ul>
     </div>
     {#each articles as article}
-      <Article {...article} />
+      <Article
+        {user}
+        id={article.id}
+        name={article.title}
+        size={article.content.length}
+        date={formatDate(article.updatedAt).replace(",", "")}
+      />
     {/each}
   </div>
 </div>
