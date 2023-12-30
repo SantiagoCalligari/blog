@@ -1,20 +1,25 @@
-import { auth } from "$lib/server/lucia";
 import { fail, redirect } from "@sveltejs/kit";
 
 import type { Actions, PageServerLoad } from "./$types";
 
 import { auth } from "$lib/server/lucia";
-import { fail, redirect } from "@sveltejs/kit";
-
-import { PrismaClient } from "@prisma/client";
+import prisma from "$lib/prisma";
 import type { Actions, PageServerLoad } from "./$types";
 export const load: PageServerLoad = async ({ locals }) => {
   const session = await locals.auth.validate();
-  let user = {
-    userId: session.user.userId,
-    username: session.user.username
-  };
-  const prisma = new PrismaClient();
+  let user;
+  if (session) {
+    user = {
+      userId: session.user.userId,
+      username: session.user.username
+    };
+  }
+  else {
+    user = {
+      userId: null,
+      username: null
+    }
+  }
   const posts = await prisma.post.findMany({
     take: 5,
     orderBy: {
