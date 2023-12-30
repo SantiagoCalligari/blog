@@ -22,7 +22,7 @@
       <div class="form-floating mb-3">
         <input
           name="password"
-          type="text"
+          type="password"
           class="form-control"
           id="password"
           placeholder="Password"
