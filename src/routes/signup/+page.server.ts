@@ -2,10 +2,13 @@ import { auth } from "$lib/server/lucia";
 import { fail, redirect } from "@sveltejs/kit";
 
 import type { PageServerLoad, Actions } from "./$types";
+import prisma from "$lib/prisma";
 
 export const load: PageServerLoad = async ({ locals }) => {
+
+  console.log()
   const session = await locals.auth.validate();
-  if (session) throw redirect(302, "/");
+  if (session || await prisma.user.count() === 1) throw redirect(302, "/");
   return {};
 };
 export const actions: Actions = {
