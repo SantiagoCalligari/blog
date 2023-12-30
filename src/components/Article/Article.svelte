@@ -64,7 +64,7 @@
     </li>
     <li class="list-inline-item text-info">{date}</li>
     <li class="list-inline-item text-warning">
-      <a href="/{name.replace(/\s+/g, '-')}">{name}</a>
+      <a href="/view/{name.replace(/\s+/g, '-')}">{name}</a>
     </li>
   </ul>
 </div>
