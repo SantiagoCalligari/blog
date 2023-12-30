@@ -22,3 +22,8 @@ export const load: PageServerLoad = async ({ locals }) => {
     },
   };
 }
+export const actions: Actions = {
+  destroy: async ({ request, locals }) => {
+    console.log(request);
+  }
+};

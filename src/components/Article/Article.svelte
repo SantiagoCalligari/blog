@@ -1,9 +1,23 @@
 <script lang="ts">
-  export let id: id;
+  export let id: number;
   export let size: number;
   export let date: string;
   export let name: string;
   export let user: any;
+  function handleDeleteClick() {
+    const formData = new FormData();
+    formData.append("articleId", id); // replace '123' with the actual article ID
+
+    fetch(`?/destroy`, {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/x-www-form-urlencoded",
+      },
+      body: new URLSearchParams(formData),
+    })
+      .then((response) => response.json())
+      .then(location.reload());
+  }
 </script>
 
 <div
@@ -12,7 +26,13 @@
 >
   <ul class="list-inline">
     {#if user.username !== null}
-      <a href="/destroy/{id}" style="color:red; ">
+      <a
+        href="/"
+        type="submit"
+        id="del"
+        style="color:red; "
+        on:click={handleDeleteClick}
+      >
         <svg
           xmlns="http://www.w3.org/2000/svg"
           width="24"

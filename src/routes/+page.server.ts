@@ -6,6 +6,7 @@ import { auth } from "$lib/server/lucia";
 import prisma from "$lib/prisma";
 
 export const load: PageServerLoad = async ({ locals }) => {
+
   const session = await locals.auth.validate();
   let user;
   if (session) {
@@ -34,6 +35,20 @@ export const load: PageServerLoad = async ({ locals }) => {
   };
 }
 export const actions: Actions = {
+  destroy: async ({ request, locals }) => {
+    const session = await locals.auth.validate();
+    if (session) {
+      const formData = await request.formData();
+      const id = formData.get("articleId");
+      const post = await prisma.post.delete({
+        where: {
+          id: Number(id)
+        }
+      });
+
+      console.log(post);
+    }
+  },
   logout: async ({ locals }) => {
     const session = await locals.auth.validate();
     if (session) {
@@ -43,4 +58,4 @@ export const actions: Actions = {
       throw redirect(302, "/login"); // redirect to login page
     }
   }
-};
+}; 
