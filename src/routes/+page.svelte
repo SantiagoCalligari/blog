@@ -12,6 +12,13 @@
 </div>
 {#if user.username !== null}
   <p>Hello {user.username}</p>
+  <a
+    aria-current="page"
+    href={"./create"}
+    style="position:absolute; right:0; bottom:60"
+  >
+    ./create
+  </a>
   <div style="position:absolute; right:0; bottom:0">
     <form method="post" action="?/logout" use:enhance>
       <input type="submit" value="Sign out" />

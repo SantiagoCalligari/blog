@@ -21,16 +21,6 @@
             </a>
           </li>
         {/each}
-        <li class="nav-item">
-          <a
-            class="nav-link px-5 {selected === './create' ? 'active' : ''}"
-            aria-current="page"
-            href={"./create"}
-            on:click={() => (selected = "./create")}
-          >
-            ./create
-          </a>
-        </li>
       </ul>
     </div>
   </div>

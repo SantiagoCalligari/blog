@@ -4,7 +4,7 @@ import type { Actions, PageServerLoad } from "./$types";
 
 import { auth } from "$lib/server/lucia";
 import prisma from "$lib/prisma";
-import type { Actions, PageServerLoad } from "./$types";
+
 export const load: PageServerLoad = async ({ locals }) => {
   const session = await locals.auth.validate();
   let user;
@@ -36,8 +36,11 @@ export const load: PageServerLoad = async ({ locals }) => {
 export const actions: Actions = {
   logout: async ({ locals }) => {
     const session = await locals.auth.validate();
-    await auth.invalidateSession(session.sessionId); // invalidate session
-    locals.auth.setSession(null); // remove cookie
-    throw redirect(302, "/"); // redirect to login page
+    if (session) {
+
+      await auth.invalidateSession(session.sessionId); // invalidate session
+      locals.auth.setSession(null); // remove cookie
+      throw redirect(302, "/login"); // redirect to login page
+    }
   }
 };

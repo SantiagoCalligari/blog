@@ -10,5 +10,5 @@
 </script>
 
 <div class="d-flex">
-  <ArticleTerminal {articles} {user}></ArticleTerminal>/>
+  <ArticleTerminal {articles} {user}></ArticleTerminal>
 </div>
