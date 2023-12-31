@@ -1,6 +1,6 @@
 import { fail, redirect } from "@sveltejs/kit";
+import prisma from "$lib/prisma";
 
-import { PrismaClient } from "@prisma/client";
 
 import type { PageServerLoad, Actions } from "./$types";
 export const load: PageServerLoad = async ({ locals }) => {
@@ -14,7 +14,6 @@ export const load: PageServerLoad = async ({ locals }) => {
 
 export const actions: Actions = {
   default: async ({ request, locals }) => {
-    const prisma = new PrismaClient();
     const session = await locals.auth.validate();
     if (session) {
       const formData = await request.formData();
