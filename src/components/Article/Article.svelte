@@ -53,18 +53,31 @@
         </svg>
       </a>
     {/if}
-    <li class="list-inline-item text-danger">-rwxr-x-r-x</li>
-    <li class="list-inline-item text-danger">-rwxr-x-r-x</li>
-    <li class="list-inline-item text-success">root root</li>
+    <li class="list-inline-item text-danger d-none d-lg-inline">-rwxr-x-r-x</li>
+    <li class="list-inline-item text-success d-none d-lg-inline">root root</li>
     <li
-      class="list-inline-item text-warning"
+      class="list-inline-item text-warning size"
       style="min-width: 5rem; text-align:right"
     >
       {size} B
     </li>
-    <li class="list-inline-item text-info">{date}</li>
+    <li class="list-inline-item text-info d-none d-lg-inline">{date}</li>
     <li class="list-inline-item text-warning">
       <a href="/view/{name.replace(/\s+/g, '-')}">{name}</a>
     </li>
   </ul>
 </div>
+
+<style>
+  @media (max-width: 900px) {
+    .inline-block {
+      margin: 10px 0 20px 0 !important;
+    }
+    .list-inline-item {
+      font-size: 120%;
+    }
+    .size {
+      display: none;
+    }
+  }
+</style>

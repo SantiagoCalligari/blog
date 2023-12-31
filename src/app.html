@@ -9,6 +9,31 @@
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/jquery.terminal/css/jquery.terminal.min.css" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   %sveltekit.head%
+  <style>
+    .repositoryTerminal {
+
+      min-width: 1210px;
+      min-height: 600px !important;
+    }
+
+    @media (max-width: 900px) {
+      .repositoryTerminal {
+        min-width: 0;
+        max-width: 90%;
+      }
+
+      .repository {
+        overflow-y: hidden;
+        overflow-x: auto;
+        white-space: nowrap;
+      }
+
+      .nav-item {
+        width: 100% !important;
+      }
+
+    }
+  </style>
 </head>
 
 <body data-sveltekit-preload-data="hover">

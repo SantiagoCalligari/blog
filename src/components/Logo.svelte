@@ -5,4 +5,4 @@
 <svelte:head>
   <link rel="icon" href={crab} />
 </svelte:head>
-<img class="d-block mx-auto m-5" src={crab} alt="crab" />
+<img class="d-block mx-auto" src={crab} alt="crab" />

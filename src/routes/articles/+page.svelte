@@ -9,6 +9,6 @@
   let articles = posts;
 </script>
 
-<div class="d-flex">
-  <ArticleTerminal {articles} {user}></ArticleTerminal>>
+<div class="d-flex articleTerminal">
+  <ArticleTerminal {articles} {user} title={"/articles"}></ArticleTerminal>>
 </div>

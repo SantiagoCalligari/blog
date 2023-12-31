@@ -14,14 +14,15 @@
     const opt = { month: "short", day: "numeric", year: "numeric" };
     return new Intl.DateTimeFormat("en-US", opt).format(date);
   }
+  export let title: string = "/etc";
 </script>
 
 <svelte:head>
-  <title>ls /etc | more [Santiago Calligari]</title>
+  <title>ls {title} | more [Santiago Calligari]</title>
 </svelte:head>
 <div
   class="bg-dark text-light m-auto px-3 py-2 mb-5 rounded"
-  style="min-width: 1000px; min-height: 500px;"
+  style="min-width: 800px; min-height: 600px;"
 >
   <Closetags />
   <div class="col">
@@ -29,7 +30,7 @@
       <ul class="list-inline">
         <li class="list-inline-item text-secondary">❯</li>
         <li class="list-inline-item text-warning">ls</li>
-        <li class="list-inline-item text-secondary">/etc</li>
+        <li class="list-inline-item text-secondary">{title}</li>
         <li class="list-inline-item">|</li>
         <li class="list-inline-item text-warning">more</li>
       </ul>

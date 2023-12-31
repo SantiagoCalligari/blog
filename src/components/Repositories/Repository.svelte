@@ -9,9 +9,9 @@
 </div>
 <div
   class="text-monospace text-danger"
-  style="padding: 0; margin:0; height:24px"
+  style="padding: 0; margin:0; height:24px;"
 >
   <span class="text-white">│└─</span>
 
-  {description}
+  <span>{description}</span>
 </div>

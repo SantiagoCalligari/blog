@@ -8,8 +8,7 @@
   <title>ls /code | more [Santiago Calligari]</title>
 </svelte:head>
 <div
-  class="bg-dark text-light m-auto px-3 py-2 mb-5 rounded"
-  style="min-width: 1000px; min-height: 550px;"
+  class="bg-dark text-light m-auto px-3 py-2 mb-5 rounded repositoryTerminal"
 >
   <Closetags />
   <div class="col">
@@ -21,23 +20,25 @@
       </ul>
     </div>
     <div class="mx-5">
-      <div
-        class="text-monospace text-info"
-        style="padding: 0; margin:0; height:24px"
-      >
-        SantiagoCalligari
-      </div>
-      <div class="text-monospace" style="padding: 0; margin:0; height:24px">
-        <span class="text-white">│</span>
-      </div>
+      <div class="repository">
+        <div
+          class="text-monospace text-info"
+          style="padding: 0; margin:0; height:24px"
+        >
+          SantiagoCalligari
+        </div>
+        <div class="text-monospace" style="padding: 0; margin:0; height:24px">
+          <span class="text-white">│</span>
+        </div>
 
-      {#each repositories as repository, i}
-        {#if i > 0}<div style="padding: 0; margin:0; height:24px">
-            <span class="text-white">│</span>
-          </div>
-        {/if}
-        <Repository {...repository} />
-      {/each}
+        {#each repositories as repository, i}
+          {#if i > 0}<div style="padding: 0; margin:0; height:24px">
+              <span class="text-white">│</span>
+            </div>
+          {/if}
+          <Repository {...repository} />
+        {/each}
+      </div>
     </div>
   </div>
 </div>
